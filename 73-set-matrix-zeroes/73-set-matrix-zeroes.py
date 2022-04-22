@@ -4,7 +4,6 @@ class Solution(object):
             return []
         
         
-        
         m=len(matrix)
         n=len(matrix[0])
         
@@ -18,10 +17,7 @@ class Solution(object):
                     zeros_row[row]=True
                     zeros_col[col]=True
                     
-                    
-                    
         for row in range(m):
             for col in range(n):
                 if zeros_row[row] or zeros_col[col]:
                     matrix[row][col]=0
-       
