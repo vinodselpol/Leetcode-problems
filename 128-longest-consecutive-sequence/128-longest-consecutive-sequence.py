@@ -1,8 +1,11 @@
 class Solution(object):
     def longestConsecutive(self, nums):
         
+        if not nums:
+            return 0
+        
         nums.sort()
-        currentSequence=min(1, len(nums))
+        currentSequence=1
         maxSequence=0
         
         for i in range(1, len(nums)):
