@@ -3,11 +3,11 @@ class Solution(object):
         hashtable={}
         count=0
         
-        for i in range(len(stones)):
-            if stones[i] not in hashtable:
-                hashtable[stones[i]]=1
+        for char in stones:
+            if char not in hashtable:
+                hashtable[char]=1
             else:
-                hashtable[stones[i]]+=1
+                hashtable[char]+=1
                 
                 
         for char in jewels:
