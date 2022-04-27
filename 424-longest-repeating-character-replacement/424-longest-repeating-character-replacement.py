@@ -16,8 +16,6 @@ class Solution:
                 
             else:
                 frequency[s[l]] -= 1
-                # if not frequency[s[l]]:
-                #     frequency.pop(s[l])
                 l += 1
         
         return longestLen
