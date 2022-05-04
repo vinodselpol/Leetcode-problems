@@ -1,25 +1,17 @@
 class Solution(object):
     def groupAnagrams(self, strs):
         
-        hashtable={}
+        h={}
         
         for word in strs:
-            sortedWord="".join(sorted(word))
+            sortedword="".join(sorted(word))
             
-            if sortedWord not in hashtable:
-                
-                hashtable[sortedWord]= [word]
+            
+            if sortedword not in h:
+                h[sortedword]=[word]
                 
             else:
-                hashtable[sortedWord].append(word)
-        output=[]
-        
-        for value in hashtable.values():
-            
-            output.append(value)
-            
-        return output
-            
+                h[sortedword].append(word)
                 
-        
-        
+                
+        return h.values()
