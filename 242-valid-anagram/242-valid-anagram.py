@@ -1,28 +1,14 @@
 class Solution(object):
     def isAnagram(self, s, t):
         h={}
+        sortedword="".join(sorted(s))
         
+        if sortedword not in h:
+            h[sortedword]=1
+            
+        sortedword1="".join(sorted(t))
         
-        for letter in s:
-            if letter not in h:
-                h[letter]=1
-                
-            else:
-                h[letter]+=1
-                
-                
-        for letter in t:
-            if letter in h:
-                h[letter]-=1
-                
-            else:
-                h[letter]=1
-                
-                
-                
-                
-        for value in h.values():
-            if value !=0:
-                return False
+        if sortedword1 not in h:
+            return False
+        
         return True
-        
