@@ -6,16 +6,21 @@
 #         self.right = right
 class Solution(object):
     def postorderTraversal(self, root):
-        res=[]
+        res, stack=[], [root]
         
-        self.helper(root, res)
-        return res
-    
-    
-    def helper(self, root, res):
         
-        if root :
-            self.helper(root.left, res)
-            self.helper(root.right, res)
-            res.append(root.val)
+        
+        while stack :
+            node=stack.pop()
+            
+            
+            if node:
+                res.append(node.val)
+                stack.append(node.left)
+                stack.append(node.right)
+                
+                
+        return res[::-1]
+        
+        
        
