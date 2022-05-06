@@ -6,18 +6,18 @@
 #         self.right = right
 class Solution(object):
     def preorderTraversal(self, root):
-        res=[]
+        res, stack=[], [root]
         
-        self.helper(root, res)
-        
-        return res
-    
-    
-    def helper(self, root, res):
-        if root:
-            res.append(root.val)
-            self.helper(root.left, res)
-            self.helper(root.right, res)
+        while stack:
+            node=stack.pop()
             
+            if node:
+                res.append(node.val)
+                stack.append(node.right)
+                stack.append(node.left)
+                
+        return res
+        
+
             
         
