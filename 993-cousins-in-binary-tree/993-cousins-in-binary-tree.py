@@ -14,35 +14,30 @@ class Solution(object):
         
         while queue:
             
-            
             if len(res)==2:
                 break
                 
-                
-            node, parent, depth= queue.popleft()
+            
+            node, parent, depth=queue.popleft()
             
             
             if node.val ==x or node.val ==y:
                 res.append((parent, depth))
                 
+                
             if node.left:
-                queue.append((node.left, node, depth+1))
+                queue.append((node.left, node, depth + 1))
+                
                 
             if node.right:
-                queue.append((node.right, node, depth+1))
+                queue.append((node.right, node, depth + 1))
                 
                 
-        node_x, node_y= res
-            
-            
-        return node_x[0]!= node_y[0] and node_x[1]== node_y[1]
-                
-                
-                
-                
-                
-            
-            
+        x, y= res
+        
+        return x[0]!= y[0] and x[1]==y[1]
+        
+    
             
             
             
