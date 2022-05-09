@@ -7,14 +7,14 @@
 class Solution(object):
     def levelOrder(self, root):
         
-        queue, res= deque([root] if root else []), []
+        queue, res= deque([root]), []
         
         
         while queue:
             qLen= len(queue)
             level=[]
             
-            for i in range(qLen):
+            for _ in range(qLen):
                 node=queue.popleft()
                 
                 if node:
@@ -26,7 +26,6 @@ class Solution(object):
                 res.append(level)
                 
         return res
-                    
-                
+        
         
         
