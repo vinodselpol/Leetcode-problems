@@ -7,32 +7,31 @@
 class Solution(object):
     def invertTree(self, root):
         
-        queue= deque([root])
         
+        queue=deque([root])
         
         while queue:
             
-            node= queue.popleft()
             
-         
+            node=queue.popleft()
+            
+            
             if node is None:
                 continue
                 
-            
+                
             node.left, node.right= node.right, node.left
+
             
             if node.left:
+                queue.append(node.left)
                 
-                 queue.append(node.left)
-                    
             if node.right:
-                
                 queue.append(node.right)
                 
                 
-                
-                
         return root
+       
         
                 
                 
