@@ -7,31 +7,34 @@
 class Solution(object):
     def hasPathSum(self, root, targetSum):
         
-        res=[]
+        if root is None:
+            return False
         
-        self.dfs(root, targetSum, res)
-        
-        return any(res)
-    
-    
-    
-    def dfs(self, root, target, res):
+        stack=[(root, root.val)]
         
         
-        if root :
-            if not root.left and not root.right and root.val == target:
-                res.append(True)
+        
+        while stack:
+            
+            curr, val= stack.pop()
+            
+            
+            if not curr.left and not curr.right and val== targetSum:
+                return True
+            
+            
+            if curr.right:
+                stack.append((curr.right, val + curr.right.val))
+            if curr.left:
+                stack.append((curr.left, val + curr.left.val))
                 
-                
-                
-            if root.left:
-                self.dfs(root.left, target-root.val, res)
-                
-            if root.right:
-                self.dfs(root.right, target-root.val, res)
-                
+        return False
                 
                 
                 
         
        
+
+
+
+
