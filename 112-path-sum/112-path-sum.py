@@ -14,20 +14,24 @@ class Solution(object):
         return any(res)
     
     
+    
     def dfs(self, root, target, res):
         
-        #edge case
+        
         if root :
-            # edge case
-            if not root.left and not root.right and root.val== target:
+            if not root.left and not root.right and root.val == target:
                 res.append(True)
-            
-            
-            
+                
+                
+                
             if root.left:
                 self.dfs(root.left, target-root.val, res)
                 
             if root.right:
                 self.dfs(root.right, target-root.val, res)
+                
+                
+                
+                
         
-     
+       
