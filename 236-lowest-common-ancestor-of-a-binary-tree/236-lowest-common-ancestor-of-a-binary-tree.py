@@ -22,7 +22,7 @@ class Solution(object):
             return root
         
         
-        return left if left else right
+        return left or right
         
         
         
