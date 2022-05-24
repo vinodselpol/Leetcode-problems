@@ -6,29 +6,27 @@
 #         self.right = right
 class Solution(object):
     def rightSideView(self, root):
-        queue, res=deque([root]), []
+        
+        queue, res= deque([root]), []
+        
         
         while queue:
             
+            qLen=len(queue)
+            
             level=[]
-            qLen= len(queue)
             
             for _ in range(qLen):
-        
-                node= queue.popleft()
-            
+                node=queue.popleft()
+                
                 if node:
-                    
                     level.append(node.val)
                     queue.append(node.left)
                     queue.append(node.right)
-                
-                
+                    
             if level:
                 res.append(level[-1])
-               
-
-
-
                 
         return res
+            
+      
