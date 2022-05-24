@@ -10,18 +10,17 @@ class Solution(object):
         
         queue=deque([root])
         
+        
         while queue:
-            
             
             node=queue.popleft()
             
-            
             if node is None:
                 continue
-                
-                
-            node.left, node.right= node.right, node.left
-
+            
+            
+            node.left, node.right=node.right, node.left
+            
             
             if node.left:
                 queue.append(node.left)
@@ -31,6 +30,8 @@ class Solution(object):
                 
                 
         return root
+        
+       
        
         
                 
