@@ -11,8 +11,9 @@ class Solution(object):
         
         
         while queue:
-            qLen= len(queue)
+            qLen=len(queue)
             level=[]
+            
             
             for _ in range(qLen):
                 node=queue.popleft()
@@ -22,10 +23,11 @@ class Solution(object):
                     queue.append(node.left)
                     queue.append(node.right)
                     
+                    
             if level:
                 res.append(level)
                 
+                
         return res
         
-        
-        
+   
