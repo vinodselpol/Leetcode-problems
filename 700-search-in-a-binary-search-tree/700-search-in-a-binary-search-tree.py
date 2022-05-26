@@ -8,16 +8,24 @@ class Solution(object):
     def searchBST(self, root, val):
         
         
-        if not root:
-            return 
+        queue=deque([root])
         
-        if val==root.val:
-            return root
-        if val < root.val:
-            
-            return self.searchBST(root.left, val)
-        elif val > root.val:
-            return self.searchBST(root.right, val)
+        while queue:
+            node=queue.popleft()
+            if node:
+                if val==node.val:
+                    return node
+                
+                if val < node.val:
+                    queue.append(node.left)
+                else:
+                    queue.append(node.right)
+                    
+        return None
+                
+                
+        
+        
             
         
         
