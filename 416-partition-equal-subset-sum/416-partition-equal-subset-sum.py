@@ -14,6 +14,9 @@ class Solution(object):
             
             
             for t in dp:
+                
+                if (t+ nums[i]==target):
+                    return True
                 nextdp.add(t + nums[i])
                 nextdp.add(t)
                 
